@@ -1,0 +1,32 @@
+.item {
+	@apply text-center;
+	> div {
+		width: 50px;
+		height: 50px;
+		@apply rounded-full border border-solid border-accent flex items-center justify-center cursor-pointer relative overflow-hidden transition;
+		&:before {
+			content: "''";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0;
+			transition: opacity 0.4s linear;
+			z-index: -1;
+			@apply accent-gradient;
+		}
+		&:hover::before {
+			opacity: 1;
+		}
+		&:hover {
+			transform: scale(0.9);
+		}
+		&:hover > svg {
+			@apply fill-white;
+		}
+	}
+	> span {
+		@apply text-accent text-xs;
+	}
+}

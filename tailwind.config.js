@@ -12,19 +12,30 @@ export default {
 			accent: '#044B04',
 			'gradient-top': '#1AA028',
 			'gradient-bottom': '#136B1B',
-			bg: '#EEFFEE',
+			bg: '#EEFFEE'
 		},
 		extend: {
 			spacing: {},
 			transitionTimingFunction: {
-				DEFAULT: 'linear',
+				DEFAULT: 'linear'
 			},
 			transitionDuration: {
-				DEFAULT: '400ms',
+				DEFAULT: '400ms'
 			},
-			keyframes: {},
-			animation: {},
-		},
+			keyframes: {
+				fadeIn: {
+					'0%': {
+						opacity: 0
+					},
+					'100%': {
+						opacity: 1
+					}
+				}
+			},
+			animation: {
+				fade: 'fadeIn .5s linear'
+			}
+		}
 	},
 	plugins: [
 		plugin(({ addUtilities, addComponents, theme }) => {
@@ -52,23 +63,23 @@ export default {
 						background: `linear-gradient(to top, ${theme(
 							'colors[gradient-top]'
 						)}, ${theme('colors[gradient-bottom]')})`,
-						zIndex: -1,
+						zIndex: -1
 					},
 					'&:hover': {
-						color: theme('colors.white'),
+						color: theme('colors.white')
 					},
 					'&:hover::before': {
-						width: '100%',
-					},
-				},
+						width: '100%'
+					}
+				}
 			}),
 				addUtilities({
 					'.accent-gradient': {
-						background: `linear-gradient(to top, ${theme(
+						background: `linear-gradient(to bottom, ${theme(
 							'colors[gradient-top]'
-						)}, ${theme('colors[gradient-bottom]')})`,
-					},
+						)}, ${theme('colors[gradient-bottom]')})`
+					}
 				})
-		}),
-	],
+		})
+	]
 }

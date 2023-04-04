@@ -18,7 +18,9 @@ const Header: FC = () => {
 			<div>
 				{pathname === '/' ? (
 					<>
-						<Button handlerClick={() => null}>ВОЙТИ | РЕГИСТРАЦИЯ</Button>
+						<Button handlerClick={() => navigate('/auth')}>
+							ВОЙТИ | РЕГИСТРАЦИЯ
+						</Button>
 						<Burger />
 					</>
 				) : (
