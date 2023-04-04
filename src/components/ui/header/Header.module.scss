@@ -1,0 +1,6 @@
+.header {
+	@apply flex justify-between items-center px-5 py-10;
+	> div {
+		@apply flex items-center gap-x-7;
+	}
+}

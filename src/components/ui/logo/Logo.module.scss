@@ -1,0 +1,7 @@
+.logo {
+	@apply flex items-center;
+	> span {
+		@apply text-accent text-sm uppercase;
+		letter-spacing: 2px;
+	}
+}
