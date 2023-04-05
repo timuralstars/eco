@@ -30,10 +30,25 @@ export default {
 					'100%': {
 						opacity: 1
 					}
+				},
+				pulse: {
+					'0%': {
+						boxShadow: '0 0 0 0 rgba(4, 75, 4, 0.4)',
+						boxShadow: '0 0 0 0 rgba(4,75, 4, 0.4)'
+					},
+					'50%': {
+						boxShadow: '0 0 0 15px rgba(4, 75, 4, 0)',
+						boxShadow: '0 0 0 15px rgba(4, 75, 4, 0)'
+					},
+					'100%': {
+						boxShadow: '0 0 0 0 rgba(4, 75, 4, 0)',
+						boxShadow: '0 0 0 0 rgba(4, 75, 44, 0)'
+					}
 				}
 			},
 			animation: {
-				fade: 'fadeIn .5s linear'
+				fade: 'fadeIn .5s linear',
+				pulse: 'pulse 1.5s ease-in-out infinite'
 			}
 		}
 	},

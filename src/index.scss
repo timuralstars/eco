@@ -10,9 +10,8 @@
 }
 
 body {
-	@apply bg-bg;
+	@apply bg-bg overflow-x-hidden;
 	font-family: 'Outfit', sans-serif;
 	font-size: 16px;
 	min-height: 100vh;
-	overflow-x: hidden;
 }

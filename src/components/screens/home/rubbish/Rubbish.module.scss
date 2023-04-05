@@ -1,14 +1,14 @@
 .rubbish {
 	width: 620px;
 	height: 265px;
-	@apply absolute animate-fade border border-solid border-accent top-0 right-0;
+	@apply bg-white absolute animate-fade border border-solid border-accent top-0 right-0 z-0;
 	> ul {
 		@apply flex items-center gap-x-3  pl-3;
 	}
 	> div {
 		@apply w-[38px] h-full absolute bottom-0 right-0 bg-gradient-to-b accent-gradient;
 		&:last-child {
-			@apply w-full left-0 -z-10  h-[38px];
+			@apply w-full left-0 -z-10 h-[38px];
 		}
 	}
 	> h3 {
