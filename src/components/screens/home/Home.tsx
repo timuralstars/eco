@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import Header from '@/components/ui/header/Header'
 
-import Map from './map/Map'
+import Chart from './map/Chart'
 import Rubbish from './rubbish/Rubbish'
 
 const Home: FC = () => {
@@ -10,7 +10,7 @@ const Home: FC = () => {
 		<div>
 			<Header />
 			<div className='relative'>
-				<Map />
+				<Chart />
 				<Rubbish />
 			</div>
 		</div>

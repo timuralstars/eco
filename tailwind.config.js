@@ -31,6 +31,17 @@ export default {
 						opacity: 1
 					}
 				},
+				jump: {
+					'0%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					},
+					'100%': {
+						transform: 'translateY(0px)'
+					}
+				},
 				pulse: {
 					'0%': {
 						boxShadow: '0 0 0 0 rgba(4, 75, 4, 0.4)',
@@ -48,7 +59,8 @@ export default {
 			},
 			animation: {
 				fade: 'fadeIn .5s linear',
-				pulse: 'pulse 1.5s ease-in-out infinite'
+				pulse: 'pulse 1.5s linear infinite',
+				jump: 'jump 2s linear infinite'
 			}
 		}
 	},

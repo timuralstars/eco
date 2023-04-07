@@ -17,6 +17,7 @@ const Rubbish: FC = () => {
 						{rubbish.map(item => (
 							<RubbishItem
 								key={item.value}
+								title={item.title}
 								icon={item.icon}
 								value={item.value}
 							/>
