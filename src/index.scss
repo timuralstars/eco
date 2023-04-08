@@ -10,7 +10,7 @@
 }
 
 body {
-	@apply bg-bg overflow-x-hidden;
+	@apply bg-bg overflow-x-hidden relative;
 	font-family: 'Outfit', sans-serif;
 	font-size: 16px;
 	min-height: 100vh;
@@ -20,4 +20,11 @@ body {
 	width: 50px;
 	height: 50px;
 	background: #000;
+}
+
+input {
+	outline: none;
+}
+input:focus {
+	outline: none;
 }

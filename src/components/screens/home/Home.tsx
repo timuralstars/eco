@@ -2,16 +2,18 @@ import { FC } from 'react'
 
 import Header from '@/components/ui/header/Header'
 
-import Chart from './map/Chart'
+import Chart from './chart/Chart'
 import Rubbish from './rubbish/Rubbish'
 
 const Home: FC = () => {
 	return (
 		<div>
-			<Header />
 			<div className='relative'>
-				<Chart />
+				<Header />
 				<Rubbish />
+			</div>
+			<div>
+				<Chart />
 			</div>
 		</div>
 	)

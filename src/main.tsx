@@ -6,13 +6,16 @@ import RouterProvider from '@/providers/router/RouterProvider'
 
 import './index.scss'
 import ReactQueryProvider from './providers/react-query/ReactQueryProvider'
+import RubbishProvider from './providers/rubbish/RubbishProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<ReactQueryProvider>
-			<MenuBurgerProvider>
-				<RouterProvider />
-			</MenuBurgerProvider>
+			<RubbishProvider>
+				<MenuBurgerProvider>
+					<RouterProvider />
+				</MenuBurgerProvider>
+			</RubbishProvider>
 		</ReactQueryProvider>
 	</React.StrictMode>
 )

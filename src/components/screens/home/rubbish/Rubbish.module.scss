@@ -1,7 +1,7 @@
 .rubbish {
 	width: 620px;
 	height: 265px;
-	@apply bg-white absolute animate-fade border border-solid border-accent top-0 right-0 z-0;
+	@apply bg-white absolute animate-fade border border-solid border-accent top-full right-0 z-10;
 	> ul {
 		@apply flex items-center gap-x-3  pl-3;
 	}

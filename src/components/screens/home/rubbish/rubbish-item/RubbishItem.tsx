@@ -1,22 +1,28 @@
+import cn from 'clsx'
 import { FC } from 'react'
 
 import MaterialIcon from '@/components/ui/material-icon/MaterialIcon'
 
+import { useCurrentRubbish } from '@/hooks/useCurrentRubbish'
+
 import { IRubbishItem } from '../rubbish.interface'
 
 import styles from './RubbishItem.module.scss'
-import { MapService } from '@/services/map/MapService'
 
-const RubbishItem: FC<IRubbishItem> = ({ value, title, icon }) => {
+const RubbishItem: FC<IRubbishItem> = rubbish => {
+	const { currentRubbish, setCurrentRubbish } = useCurrentRubbish()
+
 	return (
 		<li
-			onClick={() => MapService.getRubbishPlaces(value)}
-			className={styles.item}
+			onClick={() => setCurrentRubbish(rubbish)}
+			className={cn(styles.item, {
+				[styles.active]: currentRubbish === rubbish
+			})}
 		>
 			<div>
-				<MaterialIcon name={icon} />
+				<MaterialIcon name={rubbish.icon} />
 			</div>
-			<span>{title}</span>
+			<span>{rubbish.title}</span>
 		</li>
 	)
 }

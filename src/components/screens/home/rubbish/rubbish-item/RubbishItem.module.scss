@@ -29,4 +29,10 @@
 	> span {
 		@apply text-accent text-xs;
 	}
+	&.active > div::before {
+		opacity: 1;
+	}
+	&.active > div > svg {
+		@apply fill-white;
+	}
 }

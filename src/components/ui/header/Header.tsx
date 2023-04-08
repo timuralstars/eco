@@ -1,3 +1,4 @@
+import cn from 'clsx'
 import { FC } from 'react'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -13,7 +14,11 @@ const Header: FC = () => {
 	const navigate = useNavigate()
 
 	return (
-		<div className={styles.header}>
+		<div
+			className={cn(styles.header, {
+				'border-b border-solid border-accent': pathname !== '/'
+			})}
+		>
 			<Logo />
 			<div>
 				{pathname === '/' ? (

@@ -1,0 +1,6 @@
+.loader {
+	@apply w-[100px] h-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+	&::before {
+		@apply border-2 border-gradient-top border-solid border-t-transparent border-l-transparent border-b-transparent rounded-full absolute w-full h-full bg-transparent bottom-[2px] animate-rotate content-[''];
+	}
+}

@@ -55,12 +55,21 @@ export default {
 						boxShadow: '0 0 0 0 rgba(4, 75, 4, 0)',
 						boxShadow: '0 0 0 0 rgba(4, 75, 44, 0)'
 					}
+				},
+				rotate: {
+					'0%': {
+						transform: 'rotateZ(0deg)'
+					},
+					'100%': {
+						transform: 'rotateZ(360deg)'
+					}
 				}
 			},
 			animation: {
 				fade: 'fadeIn .5s linear',
 				pulse: 'pulse 1.5s linear infinite',
-				jump: 'jump 2s linear infinite'
+				jump: 'jump 2s linear infinite',
+				rotate: 'rotate .5s linear infinite'
 			}
 		}
 	},

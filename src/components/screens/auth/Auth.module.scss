@@ -1,0 +1,9 @@
+.auth {
+	> div:last-child {
+		@apply mt-9 w-[455px] px-7 rounded-lg border border-solid border-accent mx-auto pt-3 pb-[73px] text-center;
+		box-shadow: 0px 0px 30px 2px #044b04;
+		> h1 {
+			@apply mb-6 text-xl tracking-[2px];
+		}
+	}
+}
