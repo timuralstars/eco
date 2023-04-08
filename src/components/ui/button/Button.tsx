@@ -2,11 +2,16 @@ import { FC, PropsWithChildren } from 'react'
 
 interface IButton {
 	handlerClick: () => void
+	type?: 'button' | 'submit'
 }
 
-const Button: FC<PropsWithChildren<IButton>> = ({ children, handlerClick }) => {
+const Button: FC<PropsWithChildren<IButton>> = ({
+	children,
+	handlerClick,
+	type = 'button'
+}) => {
 	return (
-		<button className='btn-primary' onClick={handlerClick}>
+		<button type={type} className='btn-primary' onClick={handlerClick}>
 			{children}
 		</button>
 	)

@@ -11,6 +11,11 @@ export const routes: IRoute[] = [
 	},
 	{
 		path: '/auth',
+		isAuth: false,
+		component: Auth
+	},
+	{
+		path: '/personal',
 		isAuth: true,
 		component: Auth
 	}

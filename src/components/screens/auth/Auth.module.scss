@@ -1,9 +1,34 @@
 .auth {
-	> div:last-child {
+	> form {
 		@apply mt-9 w-[455px] px-7 rounded-lg border border-solid border-accent mx-auto pt-3 pb-[73px] text-center;
-		box-shadow: 0px 0px 30px 2px #044b04;
+		> img {
+			@apply inline;
+		}
 		> h1 {
 			@apply mb-6 text-xl tracking-[2px];
+		}
+		> div:last-child {
+			@apply mt-20 max-w-[200px] mx-auto;
+		}
+	}
+	&-type {
+		@apply text-right;
+		> button {
+			@apply text-accent tracking-[2px] italic relative;
+			&:before {
+				content: '';
+				width: 0;
+				height: 1px;
+				background-color: #044b04;
+				border-radius: 3px;
+				transition: width 0.4s linear;
+				position: absolute;
+				left: 0;
+				bottom: -2px;
+			}
+			&:hover::before {
+				width: 100%;
+			}
 		}
 	}
 }

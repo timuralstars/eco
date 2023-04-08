@@ -78,6 +78,7 @@ export default {
 			addComponents({
 				'.btn-primary': {
 					padding: '16px 30px',
+					width: '100%',
 					overflow: 'hidden',
 					fontSize: '10px',
 					textTransform: 'uppercase',

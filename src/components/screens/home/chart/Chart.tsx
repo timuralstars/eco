@@ -15,9 +15,11 @@ const Chart: FC = () => {
 	const { lat, lng, isLoaded } = useGeoLocation()
 	const { currentRubbish } = useCurrentRubbish()
 
-	const { data: places, isFetching } = useQuery(
+	const { data: places, isLoading } = useQuery(
 		['rubbish', currentRubbish],
-		async () => await MapService.getRubbishPlaces(currentRubbish),
+		async () => {
+			return await MapService.getRubbishPlaces(currentRubbish)
+		},
 		{
 			enabled: !!currentRubbish.value
 		}
@@ -32,7 +34,7 @@ const Chart: FC = () => {
 						defaultState={{ center: [lat, lng], zoom: 13 }}
 					>
 						<Marker type='user' lat={lat} lng={lng} />
-						{!isFetching ? (
+						{!isLoading ? (
 							places?.map(place => (
 								<Marker
 									key={place.properties.CompanyMetaData.id}
