@@ -4,7 +4,7 @@ import { useMenuBurger } from '@/hooks/useMenuBurger'
 
 import styles from './Rubbish.module.scss'
 import RubbishItem from './rubbish-item/RubbishItem'
-import { rubbish } from './rubbish.data'
+import { rubbishData } from './rubbish.data'
 
 const Rubbish: FC = () => {
 	const { isBurger } = useMenuBurger()
@@ -14,7 +14,7 @@ const Rubbish: FC = () => {
 				<div className={styles.rubbish}>
 					<h3>Выбери, какой отход хочешь сдать:</h3>
 					<ul>
-						{rubbish.map(item => (
+						{rubbishData.map(item => (
 							<RubbishItem
 								key={item.value}
 								title={item.title}

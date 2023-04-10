@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, createContext, useMemo, useState } from 'react'
 
-import { IRubbishItem } from '@/components/screens/home/rubbish/rubbish.interface'
+import { RubbishType } from '@/interfaces/rubbish.interface'
 
 import { IRubbishProvider } from './rubbish-provider.interface'
 
@@ -9,9 +9,7 @@ export const RubbishContext = createContext<IRubbishProvider>(
 )
 
 const RubbishProvider: FC<PropsWithChildren> = ({ children }) => {
-	const [currentRubbish, setCurrentRubbish] = useState<IRubbishItem>(
-		{} as IRubbishItem
-	)
+	const [currentRubbish, setCurrentRubbish] = useState<RubbishType>('')
 
 	const memoizedValue = useMemo(
 		() => ({

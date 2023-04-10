@@ -1,6 +1,6 @@
-import { IRubbishItem } from '@/components/screens/home/rubbish/rubbish.interface'
+import { RubbishType } from '@/interfaces/rubbish.interface'
 
 export interface IRubbishProvider {
-	currentRubbish: IRubbishItem
-	setCurrentRubbish: React.Dispatch<React.SetStateAction<IRubbishItem>>
+	currentRubbish: RubbishType
+	setCurrentRubbish: React.Dispatch<React.SetStateAction<RubbishType>>
 }

@@ -51,3 +51,15 @@ export interface IRubbishHoursAvailabilities {
 	Sunday: string
 	Friday: string
 }
+
+export type RubbishType =
+	| ''
+	| 'Бумага'
+	| 'Батарейки'
+	| 'Лампочки'
+	| 'Быт'
+	| 'Одежда'
+	| 'Опасные'
+	| 'Пластик'
+	| 'Стекло'
+	| 'Металл'

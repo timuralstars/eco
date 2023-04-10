@@ -14,9 +14,9 @@ const RubbishItem: FC<IRubbishItem> = rubbish => {
 
 	return (
 		<li
-			onClick={() => setCurrentRubbish(rubbish)}
+			onClick={() => setCurrentRubbish(rubbish.title)}
 			className={cn(styles.item, {
-				[styles.active]: currentRubbish === rubbish
+				[styles.active]: currentRubbish === rubbish.title
 			})}
 		>
 			<div>

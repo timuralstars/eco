@@ -1,4 +1,4 @@
 [X] - Loader
 [] - Place info onClick
-[] - Auth Page
+[X] - Auth Page
 [X] - Not Found Page

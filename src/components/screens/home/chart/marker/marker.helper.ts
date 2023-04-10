@@ -10,7 +10,7 @@ export const createPlaceTemplateFactory = (
 	const htmlTemplate = `<div class="w-[50px] h-[50px] flex items-center justify-center rounded-full ${
 		type === 'user' ? 'animate-pulse' : 'animate-jump'
 	}">
-			<img src=${type === 'user' ? userIconUrl : placeIconUrl}  alt="" />
+			<img src=${type === 'user' ? userIconUrl : placeIconUrl}  alt="Место" />
 		</div>`
 
 	const iconTemplate = ymaps!.templateLayoutFactory.createClass(htmlTemplate)

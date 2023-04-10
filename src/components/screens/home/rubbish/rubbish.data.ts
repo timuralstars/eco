@@ -1,6 +1,6 @@
 import { IRubbishItem } from './rubbish.interface'
 
-export const rubbish: IRubbishItem[] = [
+export const rubbishData: IRubbishItem[] = [
 	{
 		value:
 			'Утилизация бумаги в Краснодаре: сбор макулатуры и переработка бумажных изделий',

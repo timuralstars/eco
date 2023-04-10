@@ -17,11 +17,9 @@ const Chart: FC = () => {
 
 	const { data: places, isLoading } = useQuery(
 		['rubbish', currentRubbish],
-		async () => {
-			return await MapService.getRubbishPlaces(currentRubbish)
-		},
+		() => MapService.getRubbishPlaces(currentRubbish),
 		{
-			enabled: !!currentRubbish.value
+			enabled: !!currentRubbish
 		}
 	)
 
@@ -41,6 +39,7 @@ const Chart: FC = () => {
 									type='place'
 									lng={place.geometry.coordinates[0]}
 									lat={place.geometry.coordinates[1]}
+									place={place}
 								/>
 							))
 						) : (

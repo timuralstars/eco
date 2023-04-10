@@ -23,10 +23,14 @@ const Auth: FC = () => {
 
 	const { setIsUser } = useAuth()
 
-	const { mutateAsync, isLoading } = useMutation(
-		['auth'],
-		async (data: IAuthRequest) => {
-			return await AuthService.main(data.type, data.body)
+	const { mutate, isLoading } = useMutation(
+		['auth', type],
+		(data: IAuthRequest) => AuthService.main(data.type, data.body),
+		{
+			onSuccess: ({ accessToken }) => {
+				localStorage.setItem('accessToken', accessToken)
+				setIsUser(true)
+			}
 		}
 	)
 
@@ -36,12 +40,8 @@ const Auth: FC = () => {
 		type === 'login' ? setType('register') : setType('login')
 	}
 
-	const onSubmit: SubmitHandler<IFields> = async body => {
-		const { accessToken } = await mutateAsync({ type, body })
-
-		localStorage.setItem('accessToken', accessToken)
-
-		setIsUser(true)
+	const onSubmit: SubmitHandler<IFields> = body => {
+		mutate({ type, body })
 	}
 
 	return (
