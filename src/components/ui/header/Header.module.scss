@@ -1,6 +1,9 @@
 .header {
 	@apply flex justify-between items-center px-5 py-5;
+	@media (max-width: 565px) {
+		@apply block;
+	}
 	> div {
-		@apply flex items-center gap-x-7;
+		@apply flex justify-end items-center gap-x-7;
 	}
 }

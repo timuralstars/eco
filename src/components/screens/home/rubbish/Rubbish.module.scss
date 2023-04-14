@@ -2,13 +2,26 @@
 	width: 620px;
 	height: 265px;
 	@apply bg-white absolute animate-fade border border-solid border-accent top-full right-0 z-10;
+	@media (max-width: 633px) {
+		width: 500px;
+	}
+	@media (max-width: 520px) {
+		width: 300px;
+		height: 300px;
+	}
 	> ul {
-		@apply flex items-center gap-x-3  pl-3;
+		@apply flex flex-wrap items-center gap-3  pl-3;
 	}
 	> div {
 		@apply w-[38px] h-full absolute bottom-0 right-0 bg-gradient-to-b accent-gradient;
+		@media (max-width: 520px) {
+			@apply hidden;
+		}
 		&:last-child {
 			@apply w-full left-0 -z-10 h-[38px];
+			@media (max-width: 520px) {
+				@apply hidden;
+			}
 		}
 	}
 	> h3 {

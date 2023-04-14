@@ -1,0 +1,22 @@
+.balloon {
+	@apply text-center;
+	> h3 {
+		@apply text-gradient-top font-bold  mb-2;
+	}
+	> p {
+		@apply text-xs text-accent italic;
+	}
+	> span {
+		@apply mt-2 block text-sm text-accent;
+	}
+	> div {
+		@apply text-sm mt-2;
+	}
+	h4 {
+		@apply underline text-gradient-top font-bold;
+	}
+}
+
+.place {
+	@apply w-[50px]  h-[50px] flex items-center justify-center rounded-full  #{!important};
+}

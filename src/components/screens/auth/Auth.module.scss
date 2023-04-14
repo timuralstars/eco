@@ -1,6 +1,13 @@
 .auth {
+	@apply pb-4;
 	> form {
-		@apply mt-9 w-[455px] px-7 rounded-lg border border-solid border-accent mx-auto pt-3 pb-[73px] text-center;
+		@apply mt-9 w-[455px] px-7 rounded-lg border border-solid border-accent mx-auto pt-3 pb-[73px] text-center shadow-2xl shadow-gradient-top;
+		@media (max-width: 478px) {
+			@apply w-[355px];
+		}
+		@media (max-width: 378px) {
+			@apply w-[280px];
+		}
 		> img {
 			@apply inline;
 		}
@@ -8,7 +15,10 @@
 			@apply mb-6 text-xl tracking-[2px];
 		}
 		> div:last-child {
-			@apply mt-20 max-w-[200px] mx-auto;
+			@apply mt-10 max-w-[200px] mx-auto;
+		}
+		> p {
+			@apply text-red-500 text-left italic mb-2;
 		}
 	}
 	&-type {

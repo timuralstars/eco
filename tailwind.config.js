@@ -8,6 +8,7 @@ export default {
 		colors: {
 			transparent: colors.transparent,
 			white: colors.white,
+			red: colors.red,
 			black: colors.black,
 			accent: '#044B04',
 			'gradient-top': '#1AA028',

@@ -1,6 +1,4 @@
-import { useMutation } from '@tanstack/react-query'
-import { FC, useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { FC } from 'react'
 
 import Button from '@/components/ui/button/Button'
 import Field from '@/components/ui/field/Field'
@@ -9,40 +7,19 @@ import Loader from '@/components/ui/loader/Loader'
 
 import logo from '@/assets/images/logo/logo.png'
 
-import { AuthService } from '@/services/auth/AuthService'
-import { IAuthRequest } from '@/services/auth/auth.interface'
-
-import { useAuth } from '@/hooks/useAuth'
-
-import { IFields } from '@/interfaces/fields.interfaces'
-
 import styles from './Auth.module.scss'
+import { useAuthPage } from './useAuthPage'
 
 const Auth: FC = () => {
-	const [type, setType] = useState<'login' | 'register'>('login')
-
-	const { setIsUser } = useAuth()
-
-	const { mutate, isLoading } = useMutation(
-		['auth', type],
-		(data: IAuthRequest) => AuthService.main(data.type, data.body),
-		{
-			onSuccess: ({ accessToken }) => {
-				localStorage.setItem('accessToken', accessToken)
-				setIsUser(true)
-			}
-		}
-	)
-
-	const { register, handleSubmit } = useForm<IFields>()
-
-	const handlerTypeAuth = () => {
-		type === 'login' ? setType('register') : setType('login')
-	}
-
-	const onSubmit: SubmitHandler<IFields> = body => {
-		mutate({ type, body })
-	}
+	const {
+		isLoading,
+		type,
+		handleSubmit,
+		handlerTypeAuth,
+		register,
+		onSubmit,
+		errors
+	} = useAuthPage()
 
 	return (
 		<div className={styles.auth}>
@@ -53,10 +30,19 @@ const Auth: FC = () => {
 				<form>
 					<img src={logo} alt='Eco' />
 					<h1>{type === 'login' ? 'ВХОД' : 'РЕГИСТРАЦИЯ'}</h1>
-					<Field {...register('nickname')} placeholder='Имя' />
+					<p>{errors?.nickname && errors.nickname.message}</p>
+					<Field
+						{...register('nickname', {
+							required: 'Имя обязательное поле!'
+						})}
+						placeholder='Имя'
+					/>
+					<p>{errors?.password && errors.password.message}</p>
 					<Field
 						type='password'
-						{...register('password')}
+						{...register('password', {
+							required: 'Пароль обязательное поле!'
+						})}
 						placeholder='Пароль'
 					/>
 					<div className={styles['auth-type']}>
@@ -65,7 +51,7 @@ const Auth: FC = () => {
 						</button>
 					</div>
 					<div>
-						<Button handlerClick={handleSubmit(onSubmit)}>
+						<Button type='submit' handlerClick={handleSubmit(onSubmit)}>
 							{type === 'login' ? 'Войти' : 'Зарегистрироваться'}
 						</Button>
 					</div>

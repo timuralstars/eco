@@ -1,22 +1,35 @@
 import { Placemark, withYMaps } from '@pbe/react-yandex-maps'
 import { FC } from 'react'
 
-import { createPlaceTemplateFactory } from './marker.helper'
+import {
+	createBalloonTemplateFactory,
+	createPlaceTemplateFactory
+} from './marker.helper'
 import { IMarker } from './marker.interface'
 
 const Marker: FC<IMarker> = ({ type, lat, lng, ...props }) => {
 	const { ymaps, place } = props
 	return (
-		<Placemark
-			options={{
-				iconLayout: createPlaceTemplateFactory(ymaps, type)
-			}}
-			properties={{
-				hintContent: `<div class="text-accent ">${place?.properties.name}</div>`,
-				balloonContent: `${place?.properties.description}`
-			}}
-			geometry={[lat, lng]}
-		/>
+		<>
+			<Placemark
+				options={{
+					iconLayout: 'default#image',
+					iconImageHref: '',
+					iconImageOffset: [0, 0],
+					iconImageSize: [50, 50]
+				}}
+				properties={{
+					balloonContent: createBalloonTemplateFactory(ymaps, type, place)
+				}}
+				geometry={[lat, lng]}
+			/>
+			<Placemark
+				options={{
+					iconLayout: createPlaceTemplateFactory(ymaps, type, place)
+				}}
+				geometry={[lat, lng]}
+			/>
+		</>
 	)
 }
 
