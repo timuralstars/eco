@@ -8,6 +8,7 @@ import { rubbishData } from './rubbish.data'
 
 const Rubbish: FC = () => {
 	const { isBurger } = useMenuBurger()
+
 	return (
 		<>
 			{isBurger && (

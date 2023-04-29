@@ -9,7 +9,7 @@ const Logo: FC = () => {
 	return (
 		<Link to='/' className={styles.logo}>
 			<img src={logo} alt='Logo' />
-			<span>Greenpeace</span>
+			<span>Эко-Сорт Краснодар</span>
 		</Link>
 	)
 }
